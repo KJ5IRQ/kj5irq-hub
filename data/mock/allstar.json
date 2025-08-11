@@ -1,0 +1,11 @@
+{
+  "schema": "v1",
+  "updated": "2025-08-10T12:00:00Z",
+  "ttlMin": 5,
+  "source": "Mock AllStar",
+  "payload": {
+    "nodes": [
+      { "name": "Test Node", "status": "Online" }
+    ]
+  }
+}

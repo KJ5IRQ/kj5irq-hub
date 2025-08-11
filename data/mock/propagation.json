@@ -1,0 +1,13 @@
+{
+  "schema": "v1",
+  "updated": "2025-08-10T12:00:00Z",
+  "ttlMin": 120,
+  "source": "Mock Prop",
+  "payload": {
+    "sfi": 90,
+    "a": 5,
+    "k": 2,
+    "muf": 14,
+    "bands": ["80m", "20m"]
+  }
+}

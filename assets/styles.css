@@ -1,0 +1,442 @@
+/*
+  Core styling for the KJ5IRQ hub dashboard.  A minimal dark‑first theme
+  emphasises clarity and focus.  Variables make it easy to adjust
+  colours and spacing across light and dark modes.  Everything is
+  responsive by default thanks to CSS grid and flexbox.
+*/
+
+/* Base variables */
+:root {
+  --gap: 16px;
+  --radius: 12px;
+  --font-size: 16px;
+  --transition: 0.2s ease;
+}
+
+/* Dark theme values */
+[data-theme="dark"] {
+  --bg: #0E1116;
+  --bg-elev: #171C23;
+  --text: #E6E9ED;
+  --muted: #9BA6B2;
+  --primary: #2B3A48;
+  --accent: #C6A664;
+}
+
+/* Light theme values */
+[data-theme="light"] {
+  --bg: #F4F6F8;
+  --bg-elev: #FFFFFF;
+  --text: #1E1F21;
+  --muted: #5C6770;
+  --primary: #2B3A48;
+  --accent: #C6A664;
+}
+
+/* Density overrides */
+body[data-density="compact"] {
+  --gap: 8px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-size: var(--font-size);
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  transition: background-color var(--transition), color var(--transition);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Skip link becomes visible when focused */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  padding: 8px 12px;
+  background: var(--primary);
+  color: var(--text);
+  text-decoration: none;
+  border-radius: var(--radius);
+  z-index: 100;
+  transition: top 0.2s;
+}
+.skip-link:focus {
+  top: 10px;
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--gap);
+  background-color: var(--bg-elev);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+}
+.logo-link {
+  display: flex;
+  align-items: center;
+  color: var(--accent);
+}
+.logo {
+  width: 32px;
+  height: 32px;
+  display: block;
+  margin-right: 8px;
+}
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: var(--gap);
+}
+.nav-links li a {
+  color: var(--text);
+  opacity: 0.9;
+}
+.nav-links li a:hover,
+.nav-links li a:focus {
+  color: var(--accent);
+}
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+  font-variant-numeric: tabular-nums;
+}
+.nav-right button {
+  background: none;
+  border: none;
+  padding: 4px;
+  color: var(--text);
+  cursor: pointer;
+  border-radius: var(--radius);
+  transition: background-color var(--transition);
+}
+.nav-right button:hover,
+.nav-right button:focus {
+  background-color: var(--primary);
+}
+
+/* Link dock */
+.link-dock {
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+  padding: 0 var(--gap);
+  margin-top: -4px;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.link-dock ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: var(--gap);
+}
+.link-dock li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: var(--radius);
+  background-color: var(--bg-elev);
+  color: var(--text);
+}
+.link-dock li:hover {
+  background-color: var(--primary);
+}
+.link-dock li svg {
+  width: 16px;
+  height: 16px;
+}
+.link-more {
+  background: none;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+  padding: 6px;
+  border-radius: var(--radius);
+}
+.link-more:hover,
+.link-more:focus {
+  background-color: var(--primary);
+}
+.link-popover {
+  position: absolute;
+  background: var(--bg-elev);
+  border: 1px solid var(--primary);
+  border-radius: var(--radius);
+  padding: var(--gap);
+  margin-top: 4px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  z-index: 100;
+}
+.link-popover ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.link-popover li {
+  padding: 6px 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text);
+  border-radius: var(--radius);
+}
+.link-popover li:hover {
+  background-color: var(--primary);
+}
+
+/* Hero section */
+.hero {
+  padding: calc(var(--gap) * 2) var(--gap);
+  text-align: center;
+  background-color: var(--bg);
+  border-bottom: 1px solid var(--primary);
+}
+.hero .callsign {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+.hero .tagline {
+  margin: 8px 0;
+  font-size: 1.25rem;
+  color: var(--muted);
+}
+.hero .status {
+  margin: 4px 0;
+  font-size: 1rem;
+  color: var(--text);
+}
+.hero .built-by {
+  margin-top: 4px;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+/* Subhero for About/Projects headings */
+.subhero {
+  padding: var(--gap) var(--gap);
+  border-bottom: 1px solid var(--primary);
+  background-color: var(--bg);
+}
+.subhero h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: var(--accent);
+}
+
+/* Grid layout for cards */
+.grid {
+  display: grid;
+  gap: var(--gap);
+  padding: var(--gap);
+}
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (min-width: 600px) and (max-width: 899px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 599px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Card styles */
+.card {
+  background-color: var(--bg-elev);
+  border-radius: var(--radius);
+  padding: var(--gap);
+  display: flex;
+  flex-direction: column;
+  min-height: 160px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  position: relative;
+}
+.card h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.card h2 svg {
+  width: 18px;
+  height: 18px;
+  color: var(--accent);
+}
+.card .content {
+  flex: 1;
+  font-size: 0.9rem;
+}
+.card .stale {
+  position: absolute;
+  top: var(--gap);
+  right: var(--gap);
+  background: var(--primary);
+  color: var(--text);
+  padding: 2px 6px;
+  border-radius: var(--radius);
+  font-size: 0.7rem;
+}
+
+/* Skeleton loader */
+.skeleton {
+  background: var(--primary);
+  border-radius: var(--radius);
+  height: 1em;
+  margin-bottom: 6px;
+  position: relative;
+  overflow: hidden;
+}
+.skeleton::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  animation: shimmer 1.2s infinite;
+}
+@keyframes shimmer {
+  100% { transform: translateX(100%); }
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: var(--gap);
+  font-size: 0.8rem;
+  color: var(--muted);
+  border-top: 1px solid var(--primary);
+}
+
+/* Command palette */
+.palette {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+}
+.palette-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+}
+.palette-dialog {
+  position: relative;
+  background: var(--bg-elev);
+  padding: var(--gap);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  width: 90%;
+  max-width: 450px;
+  z-index: 1;
+}
+.palette-dialog input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 8px;
+  border: 1px solid var(--primary);
+  border-radius: var(--radius);
+  background: var(--bg);
+  color: var(--text);
+}
+.palette-dialog ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 200px;
+  overflow-y: auto;
+}
+.palette-dialog li {
+  padding: 6px 8px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  color: var(--text);
+}
+.palette-dialog li:hover,
+.palette-dialog li.active {
+  background: var(--primary);
+}
+
+/* Markdown styling for about/projects */
+article {
+  padding: var(--gap);
+  max-width: 800px;
+  margin: 0 auto;
+}
+article h1, article h2, article h3 {
+  color: var(--accent);
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+article p {
+  margin: 0.8em 0;
+}
+article ul {
+  margin: 0.8em 0;
+  padding-left: 1.5em;
+}
+article li {
+  margin-bottom: 0.4em;
+}
+
+/* Kiosk mode: hide nav and hero when kiosk parameter present */
+body.kiosk .nav,
+body.kiosk .link-dock,
+body.kiosk .hero {
+  display: none;
+}
+
+/* Print styles: simplify layout for printing */
+@media print {
+  .nav,
+  .link-dock,
+  .hero,
+  .footer,
+  .palette {
+    display: none !important;
+  }
+  body {
+    background: #fff;
+    color: #000;
+  }
+  article {
+    margin: 0;
+  }
+}

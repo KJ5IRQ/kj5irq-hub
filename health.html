@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Health Check – KJ5IRQ Hub</title>
+  <link rel="preload" href="assets/styles.css" as="style" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script defer src="assets/app.js"></script>
+  <script defer src="assets/health.js"></script>
+</head>
+<body class="js" data-density="comfortable">
+  <a href="#main" class="skip-link">Skip to content</a>
+  <nav class="nav" id="nav">
+    <div class="nav-left">
+      <a class="logo-link" href="index.html" aria-label="Home">
+        <svg class="logo" width="32" height="32"><use href="assets/icons.svg#logo"></use></svg>
+      </a>
+      <ul class="nav-links" id="nav-links"></ul>
+    </div>
+    <div class="nav-right">
+      <span class="qth" id="qth" aria-label="Location"></span>
+      <span class="clock" id="clock" aria-label="Local time">--:--</span>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <svg width="20" height="20"><use href="assets/icons.svg#sun"></use></svg>
+      </button>
+      <button class="density-toggle" id="density-toggle" aria-label="Toggle density">
+        <svg width="20" height="20"><use href="assets/icons.svg#layout"></use></svg>
+      </button>
+    </div>
+  </nav>
+  <header class="subhero">
+    <h1>System Health</h1>
+  </header>
+  <main id="main">
+    <div id="health-report" style="padding: var(--gap);"></div>
+  </main>
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> KJ5IRQ. All rights reserved.</p>
+    <p><a href="about.html">About</a> &middot; <a href="projects.html">Projects</a></p>
+    <p>Powered by AI</p>
+  </footer>
+  <div class="palette" id="palette" hidden>
+    <div class="palette-overlay" id="palette-overlay"></div>
+    <div class="palette-dialog" role="dialog" aria-modal="true" aria-labelledby="palette-search-label">
+      <input type="text" id="palette-search" placeholder="Type to search…" aria-label="Search commands" />
+      <ul id="palette-results" role="listbox"></ul>
+    </div>
+  </div>
+</body>
+</html>

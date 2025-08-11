@@ -1,0 +1,31 @@
+{
+  "callsign": "KJ5IRQ",
+  "tagline": "Exploring the airwaves",
+  "status": "Station is active",
+  "qth": "Mineral Wells, Texas",
+  "timezone": "America/Chicago",
+  "themeDefault": "system",
+  "navLinks": [
+    { "label": "Dashboard", "href": "index.html" },
+    { "label": "About", "href": "about.html" },
+    { "label": "Projects", "href": "projects.html" },
+    { "label": "Contact", "href": "#contact" }
+  ],
+  "linkDock": [
+    { "icon": "discord", "label": "Discord", "url": "https://placeholder.discord" },
+    { "icon": "qrz", "label": "QRZ", "url": "https://qrz.com/db/KJ5IRQ" },
+    { "icon": "radio", "label": "DoDropIn", "url": "https://placeholder.dodropin" },
+    { "icon": "github", "label": "GitHub", "url": "https://github.com/placeholder" },
+    { "icon": "link", "label": "ALS Dashboard", "url": "https://als.kj5irq.radio" },
+    { "icon": "youtube", "label": "YouTube", "url": "https://youtube.com/@placeholder" },
+    { "icon": "link", "label": "Blog", "url": "https://blog.placeholder" },
+    { "icon": "link", "label": "Twitter", "url": "https://twitter.com/placeholder" }
+  ],
+  "projects": [
+    {
+      "slug": "ai-agent-demo",
+      "title": "AI Agent Demo",
+      "file": "content/projects/ai-agent-demo.md"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KJ5IRQ Hub Dashboard</title>
+  <!--
+    All stylesheets and scripts are served locally.  A preload hint is
+    included to ensure our single CSS file is fetched early and avoids
+    blocking rendering.  Scripts are deferred so they run after the
+    document has finished parsing.
+  -->
+  <link rel="preload" href="assets/styles.css" as="style" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script defer src="assets/app.js"></script>
+</head>
+<body class="js" data-density="comfortable">
+  <a href="#main" class="skip-link">Skip to content</a>
+  <!-- Top navigation bar -->
+  <nav class="nav" id="nav">
+    <div class="nav-left">
+      <a class="logo-link" href="index.html" aria-label="Home">
+        <!-- logo defined in our icons sprite -->
+        <svg class="logo" width="32" height="32"><use href="assets/icons.svg#logo"></use></svg>
+      </a>
+      <ul class="nav-links" id="nav-links"></ul>
+    </div>
+    <div class="nav-right">
+      <span class="qth" id="qth" aria-label="Location"></span>
+      <span class="clock" id="clock" aria-label="Local time">--:--</span>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <svg width="20" height="20"><use href="assets/icons.svg#sun"></use></svg>
+      </button>
+      <button class="density-toggle" id="density-toggle" aria-label="Toggle density">
+        <svg width="20" height="20"><use href="assets/icons.svg#layout"></use></svg>
+      </button>
+    </div>
+  </nav>
+  <!-- Link dock shows quick shortcuts; overflow items collapse under More -->
+  <div class="link-dock" id="link-dock">
+    <ul class="link-items" id="link-items"></ul>
+    <button class="link-more" id="link-more" aria-label="More links">
+      <svg width="20" height="20"><use href="assets/icons.svg#more"></use></svg>
+    </button>
+    <div class="link-popover" id="link-popover" hidden>
+      <ul id="link-overflow"></ul>
+    </div>
+  </div>
+  <!-- Hero section introduces the callsign and tagline; status is populated from data -->
+  <header class="hero" id="hero">
+    <h1 class="callsign" id="callsign"></h1>
+    <p class="tagline" id="tagline"></p>
+    <p class="status" id="status"></p>
+    <p class="built-by">Built by AI Agent</p>
+  </header>
+  <!-- Main dashboard area.  Cards will be injected into this grid via JS. -->
+  <main id="main">
+    <div class="grid" id="dashboard-grid"></div>
+  </main>
+  <!-- Footer with basic information -->
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> KJ5IRQ. All rights reserved.</p>
+    <p><a href="about.html">About</a> &middot; <a href="projects.html">Projects</a></p>
+    <p>Powered by AI</p>
+  </footer>
+  <!-- Command palette: hidden by default.  Triggered with Ctrl/⌘+K -->
+  <div class="palette" id="palette" hidden>
+    <div class="palette-overlay" id="palette-overlay"></div>
+    <div class="palette-dialog" role="dialog" aria-modal="true" aria-labelledby="palette-search-label">
+      <input type="text" id="palette-search" placeholder="Type to search…" aria-label="Search commands" />
+      <ul id="palette-results" role="listbox"></ul>
+    </div>
+  </div>
+</body>
+</html>

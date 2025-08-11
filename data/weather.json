@@ -1,0 +1,18 @@
+{
+  "schema": "v1",
+  "updated": "2025-08-11T12:00:00Z",
+  "ttlMin": 60,
+  "source": "Demo Weather API",
+  "payload": {
+    "current": { "temp": 33, "condition": "Sunny" },
+    "forecast": [
+      { "time": "13:00", "temp": 35, "condition": "Sunny" },
+      { "time": "14:00", "temp": 36, "condition": "Sunny" },
+      { "time": "15:00", "temp": 37, "condition": "Sunny" },
+      { "time": "16:00", "temp": 36, "condition": "Sunny" },
+      { "time": "17:00", "temp": 34, "condition": "Sunny" },
+      { "time": "18:00", "temp": 32, "condition": "Clear" },
+      { "time": "19:00", "temp": 30, "condition": "Clear" }
+    ]
+  }
+}

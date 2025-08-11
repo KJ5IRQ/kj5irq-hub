@@ -1,0 +1,13 @@
+{
+  "schema": "v1",
+  "updated": "2025-08-11T12:00:00Z",
+  "ttlMin": 120,
+  "source": "HFPropAPI",
+  "payload": {
+    "sfi": 123,
+    "a": 4,
+    "k": 1,
+    "muf": 18,
+    "bands": ["80m", "40m", "20m", "15m", "10m"]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "schema": "v1",
+  "updated": "2025-08-11T12:00:00Z",
+  "ttlMin": 5,
+  "source": "System Monitor",
+  "payload": {
+    "uptime": "3d 12h",
+    "cpu": "45%",
+    "disk": "67%",
+    "containers": "5 running"
+  }
+}

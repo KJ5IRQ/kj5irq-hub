@@ -1,0 +1,12 @@
+{
+  "schema": "v1",
+  "updated": "2025-08-11T12:00:00Z",
+  "ttlMin": 60,
+  "source": "NWS",
+  "payload": {
+    "alerts": [
+      { "title": "Heat Advisory", "expires": "2025-08-12T00:00:00Z" },
+      { "title": "Air Quality Alert", "expires": "2025-08-11T18:00:00Z" }
+    ]
+  }
+}

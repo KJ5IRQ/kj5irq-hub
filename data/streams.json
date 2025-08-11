@@ -1,0 +1,9 @@
+{
+  "schema": "v1",
+  "updated": "2025-08-11T12:00:00Z",
+  "ttlMin": 1440,
+  "source": "YouTube",
+  "payload": {
+    "embed": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+  }
+}

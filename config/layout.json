@@ -1,0 +1,12 @@
+{
+  "modules": [
+    { "id": "weather",     "title": "Weather Now",        "icon": "sun",    "size": "md", "visible": true },
+    { "id": "propagation", "title": "HF Propagation",      "icon": "tower",  "size": "md", "visible": true },
+    { "id": "allstar",     "title": "AllStar Nodes",        "icon": "radio",  "size": "md", "visible": true },
+    { "id": "streams",     "title": "Featured Stream",     "icon": "youtube","size": "md", "visible": true },
+    { "id": "news",        "title": "News Pulse",          "icon": "alert",  "size": "md", "visible": true },
+    { "id": "nets",        "title": "Upcoming Nets",       "icon": "clock",  "size": "md", "visible": true },
+    { "id": "discord",     "title": "Discord Highlights",   "icon": "discord","size": "md", "visible": true },
+    { "id": "system",      "title": "System Health",        "icon": "cpu",    "size": "md", "visible": true }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "schema": "v1",
+  "updated": "2025-08-10T12:00:00Z",
+  "ttlMin": 60,
+  "source": "Mock Weather",
+  "payload": {
+    "current": { "temp": 25, "condition": "Cloudy" },
+    "forecast": [
+      { "time": "13:00", "temp": 26, "condition": "Cloudy" },
+      { "time": "14:00", "temp": 27, "condition": "Sunny" },
+      { "time": "15:00", "temp": 27, "condition": "Sunny" },
+      { "time": "16:00", "temp": 26, "condition": "Rain" },
+      { "time": "17:00", "temp": 24, "condition": "Rain" },
+      { "time": "18:00", "temp": 22, "condition": "Clear" }
+    ]
+  }
+}

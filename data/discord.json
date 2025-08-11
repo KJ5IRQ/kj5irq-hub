@@ -1,0 +1,12 @@
+{
+  "schema": "v1",
+  "updated": "2025-08-11T12:00:00Z",
+  "ttlMin": 10,
+  "source": "Discord API",
+  "payload": {
+    "messages": [
+      { "user": "Operator1", "text": "New net starts in 15 minutes." },
+      { "user": "Bot", "text": "Server updated successfully." }
+    ]
+  }
+}

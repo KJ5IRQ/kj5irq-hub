@@ -1,0 +1,12 @@
+{
+  "schema": "v1",
+  "updated": "2025-08-11T12:00:00Z",
+  "ttlMin": 5,
+  "source": "AllStarLink",
+  "payload": {
+    "nodes": [
+      { "name": "DoDropIn", "status": "Online" },
+      { "name": "Local", "status": "Offline" }
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "schema": "v1",
+  "updated": "2025-08-10T12:00:00Z",
+  "ttlMin": 30,
+  "source": "Mock News",
+  "payload": {
+    "items": [
+      { "title": "Test Article 1", "url": "https://example.com/mock1" },
+      { "title": "Test Article 2", "url": "https://example.com/mock2" }
+    ]
+  }
+}

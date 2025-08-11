@@ -1,0 +1,9 @@
+{
+  "schema": "v1",
+  "updated": "2025-08-11T12:00:00Z",
+  "ttlMin": 1,
+  "source": "Local",
+  "payload": {
+    "now": "2025-08-11T12:00:00Z"
+  }
+}

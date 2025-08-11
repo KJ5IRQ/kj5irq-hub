@@ -1,0 +1,13 @@
+{
+  "schema": "v1",
+  "updated": "2025-08-11T12:00:00Z",
+  "ttlMin": 30,
+  "source": "Faytuks/ARRL/Tech",
+  "payload": {
+    "items": [
+      { "title": "ARRL releases new guidelines", "url": "https://example.com/news1" },
+      { "title": "Tech giant announces new ham radio device", "url": "https://example.com/news2" },
+      { "title": "Faytuks: Solar flares impact propagation", "url": "https://example.com/news3" }
+    ]
+  }
+}
