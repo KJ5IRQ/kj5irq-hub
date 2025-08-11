@@ -370,29 +370,40 @@
     container.textContent = JSON.stringify(payload);
   }
 
+  // Escape HTML to prevent injection in Markdown rendering
+  function escapeHTML(str) {
+    return str.replace(/[&<>"']/g, ch => ({
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#39;'
+    }[ch] || ch));
+  }
+
   // Simple Markdown renderer supporting headings, paragraphs and unordered lists
   function renderMarkdown(md) {
-    const lines = md.split(/\n/);
+    const lines = md.replace(/\r/g, '').split(/\n/);
     let html = '';
     let inList = false;
     lines.forEach(line => {
       if (/^###\s+/.test(line)) {
         if (inList) { html += '</ul>'; inList = false; }
-        html += '<h3>' + line.replace(/^###\s+/, '') + '</h3>';
+        html += '<h3>' + escapeHTML(line.replace(/^###\s+/, '')) + '</h3>';
       } else if (/^##\s+/.test(line)) {
         if (inList) { html += '</ul>'; inList = false; }
-        html += '<h2>' + line.replace(/^##\s+/, '') + '</h2>';
+        html += '<h2>' + escapeHTML(line.replace(/^##\s+/, '')) + '</h2>';
       } else if (/^#\s+/.test(line)) {
         if (inList) { html += '</ul>'; inList = false; }
-        html += '<h1>' + line.replace(/^#\s+/, '') + '</h1>';
+        html += '<h1>' + escapeHTML(line.replace(/^#\s+/, '')) + '</h1>';
       } else if (/^\s*\*\s+/.test(line)) {
         if (!inList) { html += '<ul>'; inList = true; }
-        html += '<li>' + line.replace(/^\s*\*\s+/, '') + '</li>';
+        html += '<li>' + escapeHTML(line.replace(/^\s*\*\s+/, '')) + '</li>';
       } else if (line.trim() === '') {
         if (inList) { html += '</ul>'; inList = false; }
       } else {
         if (inList) { html += '</ul>'; inList = false; }
-        html += '<p>' + line + '</p>';
+        html += '<p>' + escapeHTML(line) + '</p>';
       }
     });
     if (inList) html += '</ul>';
